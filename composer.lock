@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da4beb00351668930738b342b3f3f9aa",
+    "content-hash": "cf5da207b342941494d4612b6dfe25be",
     "packages": [
         {
             "name": "holicz/simple-exception",
@@ -319,6 +319,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.4"
+    },
     "platform-dev": []
 }

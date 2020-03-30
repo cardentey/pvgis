@@ -2,6 +2,7 @@
     "name": "holicz/pvgis",
     "description": "Package to provide solar electricity production by GPS coordinates from PVGIS",
     "type": "library",
+    "minimum-stability": "stable",
     "require": {
         "php": "^7.4",
         "holicz/simple-exception": "^1.1",
