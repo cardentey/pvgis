@@ -22,6 +22,14 @@ final class ElectricityProduction
         return $this;
     }
 
+    /**
+     * @return MonthlyProduction[]
+     */
+    public function getMonthlyProductions(): array
+    {
+        return $this->monthlyProductions;
+    }
+
     public function getYearlyProduction(): float
     {
         return $this->yearlyProduction;
