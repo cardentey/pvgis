@@ -16,6 +16,16 @@ final class PvgisAdapter
     private const API_URL = 'https://re.jrc.ec.europa.eu/api/pvcalc?peakpower=1&pvtechchoice=crystSi&mountingplace=building&loss=1&outputformat=json&angle=35&lat=%s&lon=%s';
 
     /**
+     * Multiplier to change the PVGIS result in order to get desired production
+     */
+    private float $multiplier;
+
+    public function __construct(float $multiplier = 1.0)
+    {
+        $this->multiplier = $multiplier;
+    }
+
+    /**
      * @param string $latitude
      * @param string $longitude
      *
@@ -43,15 +53,16 @@ final class PvgisAdapter
      * @return ElectricityProduction
      *
      * @throws InvalidResponseFormatException
+     * @throws StringsException
      */
     private function parsePvgisResponse(string $response): ElectricityProduction
     {
         try {
             $response = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
 
-            $electricityProduction = new ElectricityProduction($response['outputs']['totals']['fixed']['E_m']);
+            $electricityProduction = new ElectricityProduction($this->multiplier * $response['outputs']['totals']['fixed']['E_m']);
             foreach ($response['outputs']['monthly']['fixed'] as $month) {
-                $electricityProduction->addMonthlyProduction($month['month'], $month['E_m']);
+                $electricityProduction->addMonthlyProduction($month['month'], $this->multiplier * $month['E_m']);
             }
         } catch (Exception $e) {
             throw new InvalidResponseFormatException(['response' => $response]);

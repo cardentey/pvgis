@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf5da207b342941494d4612b6dfe25be",
+    "content-hash": "9a6f5f3cf45d4d416b9144ff31478945",
     "packages": [
         {
             "name": "holicz/simple-exception",
