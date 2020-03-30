@@ -1,5 +1,5 @@
 # Installation
-```
+```bash
 composer require holicz/pvgis
 ```
 
@@ -7,15 +7,16 @@ composer require holicz/pvgis
 * PHP >= 7.4
 
 # Usage
-```
+```php
 <?php
 
-use holicz\PVIGS\PVGIS;
+use holicz\PVGIS\PVGIS;
+use holicz\PVGIS\Adapter\PvgisAdapter;
 
 $latitude = '50.0898689';
 $longitude = '14.4000936';
 
-$pvigs = new PVGIS();
+$pvgis = new PVGIS(new PvgisAdapter());
 $electricityProduction = $pvgis->getElectricityProduction($latitude, $longitude);
 
 // Yearly sum of production
