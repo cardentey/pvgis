@@ -15,6 +15,16 @@ final class ElectricityProduction
         $this->yearlyProduction = $yearlyProduction;
     }
 
+    public function __clone()
+    {
+        $monthlyProductions = [];
+        foreach ($this->monthlyProductions as $monthlyProduction) {
+            $monthlyProductions[] = clone $monthlyProduction;
+        }
+
+        $this->monthlyProductions = $monthlyProductions;
+    }
+
     public function addMonthlyProduction(int $month, float $production): self
     {
         $this->monthlyProductions[] = new MonthlyProduction($month, $production);
