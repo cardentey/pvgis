@@ -3,12 +3,14 @@
     "description": "Package to provide solar electricity production by GPS coordinates from PVGIS",
     "type": "library",
     "require": {
+        "php": "^7.4",
         "holicz/simple-exception": "^1.1",
         "thecodingmachine/safe": "^1.1"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.18",
-        "thecodingmachine/phpstan-safe-rule": "^1.0"
+        "thecodingmachine/phpstan-safe-rule": "^1.0",
+        "phpstan/extension-installer": "^1.0"
     },
     "license": "MIT",
     "authors": [
@@ -16,5 +18,10 @@
             "name": "Lukáš Holeczy",
             "email": "info@lukasholeczy.eu"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "holicz\\PVGIS\\": "src/"
+        }
+    }
 }
