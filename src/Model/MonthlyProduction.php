@@ -15,6 +15,11 @@ final class MonthlyProduction
         $this->production = $production;
     }
 
+    public function multiply(float $multiplier): void
+    {
+        $this->production = round($this->production * $multiplier, 2);
+    }
+
     public function getMonth(): int
     {
         return $this->month;

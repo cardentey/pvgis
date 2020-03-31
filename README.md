@@ -7,6 +7,8 @@ composer require holicz/pvgis
 * PHP >= 7.4
 
 # Usage
+
+## Basic usage
 ```php
 <?php
 
@@ -29,3 +31,11 @@ foreach ($electricityProduction->getMonthlyProductions() as $monthlyProduction) 
     $monthlyProduction->getProduction();
 }
 ``` 
+
+## Using multiplier
+If you for example know that you have six solar panels and the production is 1.86x time more bigger than the PVGIS
+result you should use the multiplier method
+
+```php
+$electricityProduction->multiply(1.86);
+```

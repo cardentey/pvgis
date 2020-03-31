@@ -25,6 +25,22 @@ final class ElectricityProduction
         $this->monthlyProductions = $monthlyProductions;
     }
 
+    /**
+     * Method to multiply the results by constant
+     * Useful if you know how much more powerful your solar panels are than the PVGIS result
+     *
+     * @param float $multiplier
+     */
+    public function multiply(float $multiplier): void
+    {
+        $this->yearlyProduction = round($this->yearlyProduction * $multiplier, 2);
+
+        foreach ($this->monthlyProductions as $monthlyProduction) {
+            $monthlyProduction->multiply($multiplier);
+        }
+    }
+
+
     public function addMonthlyProduction(int $month, float $production): self
     {
         $this->monthlyProductions[] = new MonthlyProduction($month, $production);
