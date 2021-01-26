@@ -11,16 +11,13 @@ use Safe\Exceptions\StringsException;
 final class InvalidResponseFormatException extends BaseException
 {
     /**
-     * @param array<string, mixed> $parameters
-     *
      * @throws StringsException
      */
-    public function __construct(array $parameters = [])
+    public function __construct()
     {
         $exceptionContext = new ExceptionContext(
             'Nepodařilo se získat informace z evropského Fotovoltaického geografického informačního systému.',
-            \Safe\sprintf('Pvgis responded with unknown format. Response: %s', $parameters['response']),
-            $parameters,
+            \Safe\sprintf('Pvgis responded with unknown format.'),
             500
         );
 

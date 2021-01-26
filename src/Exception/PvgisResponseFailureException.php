@@ -9,15 +9,11 @@ use holicz\SimpleException\ExceptionContext;
 
 final class PvgisResponseFailureException extends BaseException
 {
-    /**
-     * @param array<string, mixed> $parameters
-     */
-    public function __construct(array $parameters = [])
+    public function __construct()
     {
         $exceptionContext = new ExceptionContext(
             'Nepodařilo se získat informace z evropského Fotovoltaického geografického informačního systému.',
             'Failed to get response from Pvgis API',
-            $parameters,
             500
         );
 

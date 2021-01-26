@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a6f5f3cf45d4d416b9144ff31478945",
+    "content-hash": "e57df925331f77fbaef12b77660c8785",
     "packages": [
         {
             "name": "holicz/simple-exception",
-            "version": "v1.1.2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Holicz/simple-exception.git",
-                "reference": "1f4ca5add5f6ac4c9dd82a61fa5d08ae9c202009"
+                "reference": "93d39d6bc430e9f3cfda862444296f913acfc06f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Holicz/simple-exception/zipball/1f4ca5add5f6ac4c9dd82a61fa5d08ae9c202009",
-                "reference": "1f4ca5add5f6ac4c9dd82a61fa5d08ae9c202009",
+                "url": "https://api.github.com/repos/Holicz/simple-exception/zipball/93d39d6bc430e9f3cfda862444296f913acfc06f",
+                "reference": "93d39d6bc430e9f3cfda862444296f913acfc06f",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.4"
             },
             "type": "library",
             "autoload": {
@@ -41,7 +41,7 @@
             ],
             "description": "Simple base exception class",
             "homepage": "https://github.com/Holicz/simple-exception",
-            "time": "2020-02-04T16:05:23+00:00"
+            "time": "2021-01-20T10:37:29+00:00"
         },
         {
             "name": "thecodingmachine/safe",
@@ -320,7 +320,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
