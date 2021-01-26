@@ -65,7 +65,7 @@ final class PvgisAdapter
                 $electricityProduction->addMonthlyProduction($month['month'], $this->multiplier * $month['E_m']);
             }
         } catch (Exception $e) {
-            throw new InvalidResponseFormatException(['response' => $response]);
+            throw new InvalidResponseFormatException();
         }
 
         return $electricityProduction;
