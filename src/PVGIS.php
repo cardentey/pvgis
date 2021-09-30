@@ -6,8 +6,7 @@ namespace holicz\PVGIS;
 
 use holicz\PVGIS\Adapter\PvgisAdapter;
 use holicz\PVGIS\Model\ElectricityProduction;
-use Safe\Exceptions\FilesystemException;
-use Safe\Exceptions\StringsException;
+use holicz\PVGIS\Model\Request;
 
 final class PVGIS
 {
@@ -19,18 +18,17 @@ final class PVGIS
     }
 
     /**
-     * @param string $latitude
-     * @param string $longitude
-     *
-     * @return ElectricityProduction
-     *
      * @throws Exception\InvalidResponseFormatException
      * @throws Exception\PvgisResponseFailureException
-     * @throws FilesystemException
-     * @throws StringsException
      */
-    public function getElectricityProduction(string $latitude, string $longitude): ElectricityProduction
-    {
-        return $this->pvgisAdapter->getPvgisData($latitude, $longitude);
+    public function getElectricityProduction(
+        string $latitude,
+        string $longitude,
+        ?int $angle = null,
+        ?int $azimuth = null
+    ): ElectricityProduction {
+        $request = new Request($latitude, $longitude, $angle, $azimuth);
+
+        return $this->pvgisAdapter->getPvgisData($request);
     }
 }

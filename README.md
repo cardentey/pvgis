@@ -4,7 +4,7 @@ composer require holicz/pvgis
 ```
 
 # Requirements
-* PHP >= 7.4
+* PHP ^7.4|^8.0
 
 # Usage
 
@@ -19,7 +19,12 @@ $latitude = '50.0898689';
 $longitude = '14.4000936';
 
 $pvgis = new PVGIS(new PvgisAdapter());
-$electricityProduction = $pvgis->getElectricityProduction($latitude, $longitude);
+$electricityProduction = $pvgis->getElectricityProduction(
+    $latitude,
+    $longitude,
+    35, // Solar panels angle (not required)
+    CardinalDirection::SOUTH // Solar panels azimuth (not required)
+);
 
 // Yearly sum of production
 $electricityProduction->getYearlyProduction();
