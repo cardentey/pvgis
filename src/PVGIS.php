@@ -25,9 +25,10 @@ final class PVGIS
         string $latitude,
         string $longitude,
         ?int $angle = null,
-        ?int $azimuth = null
+        ?int $azimuth = null,
+        ?string $database = null
     ): ElectricityProduction {
-        $request = new Request($latitude, $longitude, $angle, $azimuth);
+        $request = new Request($latitude, $longitude, $angle, $azimuth, $database);
 
         return $this->pvgisAdapter->getPvgisData($request);
     }

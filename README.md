@@ -14,6 +14,7 @@ composer require holicz/pvgis
 
 use holicz\PVGIS\PVGIS;
 use holicz\PVGIS\Adapter\PvgisAdapter;
+use holicz\PVGIS\Enum\Database;
 
 $latitude = '50.0898689';
 $longitude = '14.4000936';
@@ -23,7 +24,8 @@ $electricityProduction = $pvgis->getElectricityProduction(
     $latitude,
     $longitude,
     35, // Solar panels angle (not required)
-    CardinalDirection::SOUTH // Solar panels azimuth (not required)
+    CardinalDirection::SOUTH, // Solar panels azimuth (not required)
+    Database::SARAH // Name of the radiation database (not required)
 );
 
 // Yearly sum of production

@@ -25,6 +25,7 @@ final class UrlBuilder
         $this->buildGPSCoordinates();
         $this->buildAngle();
         $this->buildAzimuth();
+        $this->buildDatabase();
 
         return $this->url;
     }
@@ -50,5 +51,14 @@ final class UrlBuilder
         }
 
         $this->url .= sprintf('&aspect=%d', $this->request->getAzimuth());
+    }
+
+    private function buildDatabase(): void
+    {
+        if ($this->request->getDatabase() === null) {
+            return;
+        }
+
+        $this->url .= sprintf('&raddatabase=%s', $this->request->getDatabase());
     }
 }
