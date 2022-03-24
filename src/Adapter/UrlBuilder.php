@@ -17,7 +17,7 @@ final class UrlBuilder
     public function __construct(Request $request)
     {
         $this->request = $request;
-        $this->url = 'https://re.jrc.ec.europa.eu/api/pvcalc?peakpower=1&pvtechchoice=crystSi&mountingplace=building&loss=10&outputformat=json';
+        $this->url = 'https://re.jrc.ec.europa.eu/api/pvcalc?peakpower=1&loss=10&outputformat=json';
     }
 
     public function build(): string
