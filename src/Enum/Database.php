@@ -6,6 +6,7 @@ namespace holicz\PVGIS\Enum;
 
 final class Database
 {
+    public const SARAH2 = 'PVGIS-SARAH2';
     public const SARAH = 'PVGIS-SARAH';
     public const NSRDB = 'PVGIS-NSRDB';
     public const ERA5 = 'PVGIS-ERA5';
